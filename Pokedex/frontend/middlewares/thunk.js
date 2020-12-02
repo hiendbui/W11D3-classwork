@@ -1,6 +1,6 @@
-const thunk = store => next => action => {
+const thunk = ({ dispatch, getState }) => next => action => {
     if (typeof action === 'function') {
-        return action(store.getState, store.dispatch);
+        return action(dispatch, getState);
     } else {
         return next(action);
     }
