@@ -220,22 +220,19 @@ var PokemonIndex = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestAllPokemon();
+    }
+  }, {
+    key: "render",
+    value: function render() {
       var pokemonItems = this.props.pokemon.map(function (pokemon) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pokemon_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: pokemon.id,
           pokemon: pokemon
         });
       });
-      this.setState({
-        pokemonItems: pokemonItems
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "pokedex"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.state.pokemonItems, ";"));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, pokemonItems, ";"));
     }
   }]);
 
@@ -304,6 +301,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 var PokemonIndexItem = function PokemonIndexItem(_ref) {
@@ -311,10 +310,12 @@ var PokemonIndexItem = function PokemonIndexItem(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
     key: pokemon.id,
     className: "pokemon-index-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: "/pokemon/".concat(pokemon.id)
   }, pokemon.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: pokemon.imageUrl,
     alt: ""
-  }));
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PokemonIndexItem);

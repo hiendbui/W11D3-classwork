@@ -9,18 +9,17 @@ export default class PokemonIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestAllPokemon()
-        const pokemonItems = this.props.pokemon.map((pokemon) => (
-          <PokemonIndexItem key={pokemon.id} pokemon={pokemon} />
-        ))
-        this.setState({ pokemonItems }) 
     }
     
     
     render() {
+        const pokemonItems = this.props.pokemon.map((pokemon) => (
+            <PokemonIndexItem key={pokemon.id} pokemon={pokemon} />
+        ))
         return (
           <div className="pokedex">
             <ul>
-                {this.state.pokemonItems};
+                {pokemonItems};
             </ul>
           </div>
         )
