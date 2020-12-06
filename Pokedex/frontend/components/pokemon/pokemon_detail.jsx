@@ -13,7 +13,7 @@ export default class PokemonDetail extends React.Component {
 
     render() {
         if (!this.props.pokemon) return null;
-
+        
         return (
             <div className="pokemon-detail">
                 <figure>
@@ -24,6 +24,7 @@ export default class PokemonDetail extends React.Component {
                     <li>Type: {this.props.pokemon.pokeType}</li>
                     <li>Attack: {this.props.pokemon.attack}</li>
                     <li>Defense: {this.props.pokemon.defense}</li>
+                    <li>Moves: {this.props.moves.join(", ")}</li>
                 </ul>
 
             
